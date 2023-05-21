@@ -19,11 +19,7 @@ interface ProfileDrawerProps {
 	};
 }
 
-const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
-	isOpen,
-	onClose,
-	data,
-}) => {
+const ProfileDrawer = ({ isOpen, onClose, data }: ProfileDrawerProps) => {
 	const [confirmOpen, setConfirmOpen] = useState(false);
 	const otherUser = useOtherUser(data);
 
@@ -102,17 +98,17 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 											<div className="relative flex-1 px-4 mt-6 sm:px-6">
 												<div className="flex flex-col items-center">
 													<div className="mb-2">
-														{/* {data.isGroup ? (
+														{data.isGroup ? (
 															<AvatarGroup
 																users={
 																	data.users
 																}
 															/>
-														) : ( */}
-														<Avatar
-															user={otherUser}
-														/>
-														{/* )} */}
+														) : (
+															<Avatar
+																user={otherUser}
+															/>
+														)}
 													</div>
 													<div>{title}</div>
 													<div className="text-sm text-gray-500">

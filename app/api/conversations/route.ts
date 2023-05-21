@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 			// 	}
 			// });
 
-			// return NextResponse.json(newConversation);
+			return NextResponse.json(newConversation);
 		}
 
 		const existingConversations = await prisma.conversation.findMany({

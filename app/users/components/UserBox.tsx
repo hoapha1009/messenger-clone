@@ -1,6 +1,7 @@
 'use client';
 
 import Avatar from '@/app/components/Avatar';
+import LoadingModal from '@/app/components/modals/LoadingModal';
 import { User } from '@prisma/client';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -27,6 +28,7 @@ const UserBox = ({ data }: UserBoxProps) => {
 
 	return (
 		<>
+			{isLoading && <LoadingModal />}
 			<div
 				onClick={handleClick}
 				className="relative flex items-center w-full p-3 space-x-3 transition bg-white rounded-lg cursor-pointer hover:bg-neutral-100"
