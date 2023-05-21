@@ -58,6 +58,7 @@ export async function POST(request: Request) {
 				},
 			},
 		});
+
 		return NextResponse.json(newMessage);
 	} catch (error: any) {
 		return new NextResponse('Error', { status: 500 });
